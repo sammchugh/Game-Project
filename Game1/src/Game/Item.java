@@ -1,10 +1,10 @@
 package Game;
 
-public class Item {
+public class Item extends Game{
 	private String name; 
 	private String description;
 
-	public Item(String name, String desciption) {
+	public Item(String name, String description) {
 		this.name = name;
 		this.description = description; 
 	}
@@ -29,5 +29,12 @@ public class Item {
 		return name;
 	}
 	
+	public void open() {
+		Game.print("You can't open that!");
+	}
+	
+	public void use() {
+		Game.print("You can't use that!");
+	}
 	
 }

@@ -7,8 +7,25 @@ public class Game {
 	public static void main(String[] args) {
 		runGame();
     }
+	static Room currentRoom = World.buildWorld();
+	public static ArrayList<Item> inventory = new ArrayList<Item>();
 	
-	static ArrayList<Item> inventory = new ArrayList<Item>();
+	public static void print(Object obj) {
+		System.out.println(obj.toString());
+	}
+	
+	public static Room getCurrentRoom() {
+        return currentRoom;
+    }
+
+	public static Item getItemInventory(String name) {
+		for(Item i : inventory) {
+			if(i.getName().equals(name)) {
+				return i;
+			}
+		}
+		return null;
+	}
 	
 	public static void runGame() {
 		Room currentRoom = World.buildWorld();
@@ -61,20 +78,60 @@ public class Game {
 
 
 		           else{
-		               boolean found = false;
+		               boolean ItemHere = true;
 
-		               for(Item c : inventory){
-		                   if(c.getName().equals(words[1])){
-		                       System.out.println(c.getDescription() + "\n");
-		                       found = true;      
+		               for(Item z : inventory){
+		                   if(z.getName().equals(words[1])){
+		                       System.out.println(z.getDescription() + "\n");
+		                       ItemHere = true;      
 		                   }
 		               }
 
-		               if(found == false)
+		               if(ItemHere == false)
 		                   System.out.println("That item is not in this room \n");
 		           }
+		    break;
+			case "use":
+
+                System.out.println("You are trying to use the " + words[1] + ".");
+                
+                if(currentRoom.getItem(words[1]) != null){
+                    currentRoom.getItem(words[1]).use();
+                }
+
+                else{
+
+                    if (getItemInventory(words[1]) == null){
+                        System.out.println("There is no such item");
+                    }
+
+                    else{
+                        getItemInventory(words[1]).use();
+                        System.out.println();
+                    }
+                }
 		               
-		           break;
+		    break;
+			case "open":
+
+                System.out.println("You are trying to use the " + words[1] + ".");
+                
+                if(currentRoom.getItem(words[1]) != null){
+                    currentRoom.getItem(words[1]).open();
+                }
+
+                else{
+
+                    if (getItemInventory(words[1]) == null){
+                        System.out.println("There is no such item");
+                    }
+
+                    else{
+                        getItemInventory(words[1]).open();
+                        System.out.println();
+                    }
+                }
+            break;
 			default:
 				System.out.println("I don't know what that means.");
 			}

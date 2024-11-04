@@ -40,6 +40,13 @@ public class World {
         study.setItem("book", book);
         nursery.setItem("toy",toy);
         stairs.setItem("picture", picture);
+        
+        Safe safe = new Safe("safe", "It's an impressive safe!");
+        nursery.setItem("safe",safe);
+        
+        Combination combination = new Combination("1234","This is the combination to the safe. ");
+        stairs.setItem("combination",combination);
+        
 
         
         return livingRoom;
