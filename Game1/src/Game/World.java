@@ -4,12 +4,12 @@ public class World {
 	// Builds the game world.
     // Returns the room the player starts in.
     public static Room buildWorld() {
-        Room livingRoom = new Room("You are in the Lingering Spirit's Living Room.");
-        Room kitchen = new Room("You are in the Butcher's Kitchen.");
-        Room stairs = new Room("You are in the Creaking Stairwell");
-        Room study = new Room("You are in the Study of Whispers");
-        Room nursery = new Room("You are in the Dollmaker's Nursey");
-        Room basement = new Room("You are in the Forgotten Screams Basement");
+        Room livingRoom = new Room("Living Room", "You are in the Lingering Spirit's Living Room.");
+        Room kitchen = new Room("Kitchen", "You are in the Butcher's Kitchen.");
+        Room stairs = new Room("Stairwell", "You are in the Creaking Stairwell");
+        Room study = new Room("Study", "You are in the Study of Whispers");
+        Room nursery = new Room("Nursery","You are in the Dollmaker's Nursey");
+        Room basement = new Room("Basement", "You are in the Forgotten Screams Basement");
         
         Item candle = new Item("candle", "This candle will be your only light source through the game.");
         Item toy = new Item("toy", "You will need this toy to stay safe");

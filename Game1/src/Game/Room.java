@@ -12,9 +12,13 @@ public class Room {
     private Room down;
     private Item i;
     private HashMap<String,Item> item = new HashMap<String,Item>();
+    private boolean lock;
+    private String name;
+    
 
-    public Room(String description) {
+    public Room(String name, String description) {
         this.description = description;
+        this.name = name;
     }    
 
     public Room getExit(char x) {
@@ -67,5 +71,21 @@ public class Room {
     
     public void removeItem(String name) {
     	item.remove(name);
+    }
+    
+    public boolean getLock() {
+    	return lock;
+    }
+    
+    public void setLock(boolean b) {
+    	lock = b;
+    }
+    
+    public String getRoomName() {
+    	return name;
+    }
+    
+    public void setRoomName(String n) {
+    	name = n;
     }
 }
