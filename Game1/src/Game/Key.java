@@ -7,10 +7,11 @@ public class Key extends Item{
 	
 	@Override
 	public void insert() {
-		if(Game.currentRoom.getExit('w') == null){
+		Room currentRoom;
+		if(currentRoom.getExit('w') == null){
 	           Game.print("You don't have the key for this room.");
 	    }
-		else if(Game.currentRoom.getExit('w').getRoomName().equals("Study")) {
+		else if(currentRoom.getExit('w').getRoomName().equals("Study")) {
 			Game.print("Your key opened the door");
 			Game.currentRoom.getExit('w').setLock(false);
 		}	

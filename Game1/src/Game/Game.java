@@ -7,14 +7,14 @@ public class Game {
 	public static void main(String[] args) {
 		runGame();
     }
-	static Room currentRoom = World.buildWorld();
+	Room currentRoom = World.buildWorld();
 	public static ArrayList<Item> inventory = new ArrayList<Item>();
 	
 	public static void print(Object obj) {
 		System.out.println(obj.toString());
 	}
 	
-	public static Room getCurrentRoom() {
+	public Room getCurrentRoom() {
         return currentRoom;
     }
 
