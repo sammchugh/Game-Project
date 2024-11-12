@@ -58,6 +58,7 @@ public class Game {
 				else
 					currentRoom = nextRoom;
 				break;
+				
 			case "x":
 				System.out.println("Thanks for playing my game!");
 				break;
@@ -141,6 +142,43 @@ public class Game {
                     }
                 }
             break;
+			case "read":
+				System.out.println("You are trying to read the " + words[1] + ".");
+				if(currentRoom.getItem(words[1]) != null){
+                    currentRoom.getItem(words[1]).read();
+                }
+
+                else{
+
+                    if (getItemInventory(words[1]) == null){
+                        System.out.println("There is no such item");
+                    }
+
+                    else{
+                        getItemInventory(words[1]).read();
+                        System.out.println();
+                    }
+                }
+			case "insert":
+
+                System.out.println("You are trying to use the " + words[1] + ".");
+                
+                if(currentRoom.getItem(words[1]) != null){
+                    currentRoom.getItem(words[1]).insert();
+                }
+
+                else{
+
+                    if (getItemInventory(words[1]) == null){
+                        System.out.println("There is no such item");
+                    }
+
+                    else{
+                        getItemInventory(words[1]).insert();
+                        System.out.println();
+                    }
+                }
+            break;	
 			default:
 				System.out.println("I don't know what that means.");
 			}

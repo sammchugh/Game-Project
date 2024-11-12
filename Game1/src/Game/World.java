@@ -11,13 +11,21 @@ public class World {
         Room nursery = new Room("Nursery","You are in the Dollmaker's Nursey");
         Room basement = new Room("Basement", "You are in the Forgotten Screams Basement");
         
+        livingRoom.setLock(false);
+        kitchen.setLock(false);
+        stairs.setLock(false);
+        study.setLock(true);
+        nursery.setLock(false);
+        basement.setLock(false);
+        
+        
         Item candle = new Item("candle", "This candle will be your only light source through the game.");
         Item toy = new Item("toy", "You will need this toy to stay safe");
         Item book = new Item("book", "You will need this book to know the secrets of each room");
         Item newspaper = new Item("newspaper", "This old newspaper contains the secrets to the house");
         Item cipher = new Item("cipher", "You will need to crack the cipher to escape the house");
         Item picture = new Item("picture", "This old picture will help you identify the people that used to live in the house");
-
+        
         livingRoom.addExit(kitchen, 'e'); // kitchen to the right of LR
         livingRoom.addExit(study, 'w'); // study to the left of LR
         livingRoom.addExit(stairs, 'u'); // stairs above living room
@@ -47,6 +55,8 @@ public class World {
         Combination combination = new Combination("1234","This is the combination to the safe. ");
         stairs.setItem("combination",combination);
         
+        Key key = new Key("key", "old gold key");
+        kitchen.setItem("key", key);
 
         
         return livingRoom;

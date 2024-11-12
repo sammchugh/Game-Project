@@ -1,6 +1,6 @@
 package Game;
 
-public class Item extends Game{
+public class Item {
 	private String name; 
 	private String description;
 
@@ -37,4 +37,11 @@ public class Item extends Game{
 		Game.print("You can't use that!");
 	}
 	
+	public void read() {
+		Game.print("You can't read that!");
+	}
+	
+	public void insert() {
+		Game.print("You can't insert that!");
+	}
 }
