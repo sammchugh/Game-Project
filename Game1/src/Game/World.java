@@ -19,11 +19,8 @@ public class World {
         basement.setLock(false);
         
         
-        Item candle = new Item("candle", "This candle will be your only light source through the game.");
         Item toy = new Item("toy", "You will need this toy to stay safe");
         Item book = new Item("book", "You will need this book to know the secrets of each room");
-        Item newspaper = new Item("newspaper", "This old newspaper contains the secrets to the house");
-        Item cipher = new Item("cipher", "You will need to crack the cipher to escape the house");
         Item picture = new Item("picture", "This old picture will help you identify the people that used to live in the house");
         
         livingRoom.addExit(kitchen, 'e'); // kitchen to the right of LR
@@ -42,9 +39,6 @@ public class World {
         
         nursery.addExit(stairs, 's'); // stairs south of nursery
         
-        livingRoom.setItem("candle",candle);
-        livingRoom.setItem("newspaper", newspaper);
-        livingRoom.setItem("cipher", cipher);
         study.setItem("book", book);
         nursery.setItem("toy",toy);
         stairs.setItem("picture", picture);
@@ -57,9 +51,16 @@ public class World {
         
         Key key = new Key("key", "old gold key");
         kitchen.setItem("key", key);
-
+        
+        Candle candle = new Candle("candle", "ritual candle, you will be able to send near by spirits back to hell if you light the candle around them.");
+        study.setItem("candle", candle);
+        
+        Cipher cipher = new Cipher("cipher", "You will need to crack the cipher to know how to escape the house");
+        stairs.setItem("cipher", cipher);
+        
+        Newspaper newspaper = new Newspaper("newspaper", "You will need to read the newspaper to know how to escape the house");
+        basement.setItem("newspaper", newspaper);
         
         return livingRoom;
-     
     }
 }

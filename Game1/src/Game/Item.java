@@ -41,7 +41,15 @@ public class Item {
 		Game.print("You can't read that!");
 	}
 	
-	public void insert() {
+	public void insert(Room lock) {
 		Game.print("You can't insert that!");
+	}
+	
+	public void light() {
+		Game.print("You can't light that!");
+	}
+	
+	public void crack() {
+		Game.print("You can't crack that, you can only crack the cipher");
 	}
 }

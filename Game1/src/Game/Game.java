@@ -159,12 +159,13 @@ public class Game {
                         System.out.println();
                     }
                 }
+			break;
 			case "insert":
 
                 System.out.println("You are trying to use the " + words[1] + ".");
                 
                 if(currentRoom.getItem(words[1]) != null){
-                    currentRoom.getItem(words[1]).insert();
+                    currentRoom.getItem(words[1]).insert(currentRoom);
                 }
 
                 else{
@@ -174,11 +175,29 @@ public class Game {
                     }
 
                     else{
-                        getItemInventory(words[1]).insert();
+                        getItemInventory(words[1]).insert(currentRoom);
                         System.out.println();
                     }
                 }
             break;	
+			case "crack":
+				System.out.println("You are trying to crack the " + words[1] + ".");
+				if(currentRoom.getItem(words[1]) != null){
+                    currentRoom.getItem(words[1]).crack();
+                }
+
+                else{
+
+                    if (getItemInventory(words[1]) == null){
+                        System.out.println("There is no such item");
+                    }
+
+                    else{
+                        getItemInventory(words[1]).crack();
+                        System.out.println();
+                    }
+                }
+			break;
 			default:
 				System.out.println("I don't know what that means.");
 			}
