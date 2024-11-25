@@ -1,0 +1,24 @@
+Living Room
+Lingering Spirit's Living Room: The game will automatically spawn you into the living room. You will experience an eerie feeling when in the room. The kitchen is east to the room and the study is west. You can also go up the stairs.
+#
+#
+Kitchen
+Butcher's Kitchen: The kitchen contains many remains from the butcher, find the key hidden somewhere in the room. You can either go down to search the dark basement or west back to the living room.
+#
+#
+Stairwell
+Creaking Stairwell: Strange unsettling noises are heard as you use the stairs to go from one level to another. There are pictures on the wall and the combination to open the safe. Go down the stairs to return to the living room or continue north to enter the nursey. There is a cipher somewhere in the stairwell that holds a secret to the game.
+#
+#
+Study
+Study of Whispers: The study contains a ritual candle you will need to send the spirit's keeping you in the house back to hell, but the room is locked, until you get the key to open the door. The only exit for the room is east towards the living room.
+#
+#
+Nursery
+Doll Playhouse Nursery: A music box with a twirling ballerina fills the quiet room offkey tune as creaky various kinds of dolls watch your every move. There are toys in the room you will need one to use as part on your banishing ritual. You can leave this room by heading south back to the stairwell.
+#
+#
+Basement
+Forgotten Screams Basement: The basement is dark, you can hear faded scream and cries. You can exit by going up to the kitchen. You will need to complete the ritual here to escape the haunted house.
+#
+#
