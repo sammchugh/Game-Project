@@ -1,7 +1,7 @@
 package Game;
 
 public class Butler extends NPC {
-	public Butler() {
+	public Butler(String name, String desc) {
 		super("butler", "An old unwell butler");
 	}
 	

@@ -61,10 +61,10 @@ public class World {
         Newspaper newspaper = new Newspaper("newspaper", "You will need to read the newspaper to know how to escape the house");
         basement.setItem("newspaper", newspaper);
         
-        Puppy puppy = new Puppy();
+        Puppy puppy = new Puppy("puppy", "A hideous puppy wags his tail.");
         nursery.addNPC("puppy",puppy);
         
-        Butler butler = new Butler();
+        Butler butler = new Butler("butler", "An old unwell butler");
         livingRoom.addNPC("butler", butler);
         
         return livingRoom;

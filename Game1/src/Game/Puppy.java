@@ -1,7 +1,7 @@
 package Game;
 
 public class Puppy extends NPC{
-	public Puppy() {
+	public Puppy(String name, String desc) {
 		super("puppy", "A hideous puppy wags his tail.");
 	}
 	
