@@ -1,6 +1,8 @@
 package Game;
 
-public class Item {
+import java.io.Serializable;
+
+public class Item implements Serializable{
 	private String name; 
 	private String description;
 
@@ -51,5 +53,9 @@ public class Item {
 	
 	public void crack() {
 		Game.print("You can't crack that, you can only crack the cipher");
+	}
+	
+	public void talk() {
+		Game.print("You can't talk to that NPC");
 	}
 }

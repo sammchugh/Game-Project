@@ -4,12 +4,12 @@ public class World {
 	// Builds the game world.
     // Returns the room the player starts in.
     public static Room buildWorld() {
-        Room livingRoom = new Room("Living Room", "You are in the Lingering Spirit's Living Room.");
-        Room kitchen = new Room("Kitchen", "You are in the Butcher's Kitchen.");
-        Room stairs = new Room("Stairwell", "You are in the Creaking Stairwell");
-        Room study = new Room("Study", "You are in the Study of Whispers");
-        Room nursery = new Room("Nursery","You are in the Dollmaker's Nursey");
-        Room basement = new Room("Basement", "You are in the Forgotten Screams Basement");
+        Room livingRoom = new Room("Living Room");
+        Room kitchen = new Room("Kitchen");
+        Room stairs = new Room("Stairwell");
+        Room study = new Room("Study");
+        Room nursery = new Room("Nursery");
+        Room basement = new Room("Basement");
         
         livingRoom.setLock(false);
         kitchen.setLock(false);
@@ -60,6 +60,12 @@ public class World {
         
         Newspaper newspaper = new Newspaper("newspaper", "You will need to read the newspaper to know how to escape the house");
         basement.setItem("newspaper", newspaper);
+        
+        Puppy puppy = new Puppy();
+        nursery.addNPC("puppy",puppy);
+        
+        Butler butler = new Butler();
+        livingRoom.addNPC("butler", butler);
         
         return livingRoom;
     }

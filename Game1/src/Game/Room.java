@@ -1,9 +1,9 @@
 package Game;
 
 import java.util.HashMap;
+import java.io.Serializable;
 
-public class Room {
-	private String description;
+public class Room implements Serializable {
     private Room east; 
     private Room west;
     private Room north;
@@ -11,14 +11,16 @@ public class Room {
     private Room up;
     private Room down;
     private Item i;
+    private NPC npc;
     private HashMap<String,Item> item = new HashMap<String,Item>();
+    private HashMap<String, NPC> bots = new HashMap<String,NPC>();
     private boolean lock;
     private String name;
     
 
-    public Room(String name, String description) {
-        this.description = description;
-        this.name = name;
+    public Room(String n) {
+        name = n;
+        Game.roomObjects.put(n, this);
     }    
 
     public Room getExit(char x) {
@@ -58,8 +60,18 @@ public class Room {
     }
 
     public String toString() {
-        return description;
+        String s = this.getDescription(name);
+        return s;
     }    
+    
+    public String getDescription(String n) {
+    	for (String s:Game.rooms.keySet()) {		
+    		if(s.equals(n)) {
+    			return Game.rooms.get(s);
+    		}
+    	}
+    	return null;
+    }
     
     public Item getItem(String name) {
     	return item.get(name);
@@ -88,4 +100,15 @@ public class Room {
     public void setRoomName(String n) {
     	name = n;
     }
+    
+    public void addNPC(String name, NPC npc) {
+    	bots.put(name, npc);
+    }
+    
+    public NPC getNPC(String name) {
+    	return bots.get(name);
+    }
+    
+
+    
 }
