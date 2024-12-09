@@ -10,6 +10,7 @@ public class World {
         Room study = new Room("Study");
         Room nursery = new Room("Nursery");
         Room basement = new Room("Basement");
+        Room freedom = new Room("Freedom");
         
         livingRoom.setLock(false);
         kitchen.setLock(false);
@@ -17,6 +18,8 @@ public class World {
         study.setLock(true);
         nursery.setLock(false);
         basement.setLock(false);
+        freedom.setLock(true);
+        
         
         
         Item toy = new Item("toy", "You will need this toy to stay safe");
@@ -26,6 +29,7 @@ public class World {
         livingRoom.addExit(kitchen, 'e'); // kitchen to the right of LR
         livingRoom.addExit(study, 'w'); // study to the left of LR
         livingRoom.addExit(stairs, 'u'); // stairs above living room
+        livingRoom.addExit(freedom, 's');
         
         kitchen.addExit(basement, 'd'); // basement under K
         kitchen.addExit(livingRoom, 'w'); // LR to the left of K
@@ -61,8 +65,8 @@ public class World {
         Newspaper newspaper = new Newspaper("newspaper", "You will need to read the newspaper to know how to escape the house");
         basement.setItem("newspaper", newspaper);
         
-        Puppy puppy = new Puppy("puppy", "A hideous puppy wags his tail.");
-        nursery.addNPC("puppy",puppy);
+        Child child = new Child("child", "A very pale young girl with dark circles under her eyes.");
+        nursery.addNPC("child",child);
         
         Butler butler = new Butler("butler", "An old unwell butler");
         livingRoom.addNPC("butler", butler);

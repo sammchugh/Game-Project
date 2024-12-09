@@ -16,7 +16,8 @@ public class Room implements Serializable {
     private HashMap<String, NPC> bots = new HashMap<String,NPC>();
     private boolean lock;
     private String name;
-    
+    private static final long serialVersionUID = 1L;
+
 
     public Room(String n) {
         name = n;
@@ -108,7 +109,5 @@ public class Room implements Serializable {
     public NPC getNPC(String name) {
     	return bots.get(name);
     }
-    
-
     
 }
