@@ -12,12 +12,13 @@ import java.util.Arrays;
 public class Game {
 
 	public static void main(String[] args) {
+		Game play = new Game();
 		textFile();
 		gui = new Display();
 		Game.print(currentRoom);
     }
 	
-	
+	Game play; 
 	public static Scanner input = new Scanner(System.in);
 	
 	public static ArrayList<Item> inventory = new ArrayList<Item>();
@@ -59,9 +60,9 @@ public class Game {
 	               }
 	           }
 	           input.close();
-	       } 
-	       catch (FileNotFoundException e) {
-	           Game.print("File not found!");
+		       } 
+		       catch (FileNotFoundException e) {
+		           Game.print("File not found!");
 	       } 
 	}
 	
@@ -70,33 +71,34 @@ public class Game {
 		try {
 			FileOutputStream fos = new FileOutputStream(f);
 			ObjectOutputStream stream = new ObjectOutputStream(fos);
-			stream.writeObject(inventory);
 			stream.writeObject(currentRoom);
+			stream.writeObject(inventory);
 			stream.writeObject(roomObjects);
 			stream.close();
-		} catch (FileNotFoundException e) {
-		System.out.println("File "+fileName+" not found.");
-		} catch (IOException ex) {
-		System.out.println("Bummers, man");
+			} catch (FileNotFoundException e) {
+				Game.print("File "+fileName+" not found.");
+			} catch (IOException ex) {
+				Game.print("Bummers, man");
 		}
 	}
 	
+	@SuppressWarnings({ "unchecked", "rawtypes" })
 	public static void loadGame(String fileName) {
 		File f = new File(fileName);
 		try {
 			FileInputStream fos = new FileInputStream(f);
 			ObjectInputStream stream = new ObjectInputStream(fos);
+			currentRoom = (Room) stream.readObject();
 			inventory = (ArrayList) stream.readObject();
 			roomObjects = (HashMap) stream.readObject();
-			currentRoom = (Room) stream.readObject();
 			stream.close();
-		} catch (FileNotFoundException e) {
-		System.out.println("File "+fileName+" not found.");
-		System.exit(0);
-		} catch (IOException ex) {
-		System.out.println("Bummers, man");
-		} catch (ClassNotFoundException ex) {
-		System.out.println("Not an object.");
+			} catch (FileNotFoundException e) {
+				Game.print("File "+fileName+" not found.");
+				System.exit(0);
+			} catch (IOException ex) {
+				Game.print("Bummers, man");
+			} catch (ClassNotFoundException ex) {
+				Game.print("Not an object.");
 		}
 	}
 	
@@ -263,7 +265,7 @@ public class Game {
 				Game.print("You are trying to preform the ritual.");
 				if(currentRoom.getRoomName() == "Basement") {
 					if(getItemInventory("toy") != null && getItemInventory("candle") != null && getItemInventory("cipher") != null) {
-						currentRoom.getExit('s').getExit('d').getExit('s').setLock(false);
+						currentRoom.getExit('u').getExit('w').getExit('s').setLock(false);
 						Game.print("You won the game! You can now leave the house to freedom!");
 					}
 				}
@@ -273,11 +275,15 @@ public class Game {
 			break;
 			
 			case "save":
-				saveGame(words[1]);
+				String saveFile = words[1]; 
+				Game.print("You are trying to save the file " + saveFile + ".");
+				saveGame(saveFile);
 				break;
 				
 			case "load":
-				loadGame(words[1]);
+				String loadFile = words[1]; 
+				Game.print("You are trying to save the file " + loadFile + ".");
+				saveGame(loadFile);
 				break;
 				
 			case "talk":

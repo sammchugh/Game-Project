@@ -14,7 +14,7 @@ public class Newspaper extends Item{
 
 	    else{
 	        Game.print("You have successfully read the newspaper!");
-	        Game.print("The newspapers says: In order to escape you will need to say the words 'I set you free' in the nursery holding the toy");
+	        Game.print("The newspapers says: In order to escape you will need to say 'escape' in the basement holding the toy, candle, and cipher.");
 	     }
 
 	}

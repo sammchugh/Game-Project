@@ -1,5 +1,5 @@
 Living Room
-Lingering Spirit's Living Room: The game will automatically spawn you into the living room. You will experience an eerie feeling when in the room. The kitchen is east to the room and the study is west. You can also go up the stairs.
+Lingering Spirit's Living Room: The game will automatically spawn you into the living room. Talk to the butler. You will experience an eerie feeling when in the room. The kitchen is east to the room and the study is west. You can also go up the stairs.
 #
 #
 Kitchen
@@ -7,7 +7,7 @@ Butcher's Kitchen: The kitchen contains many remains from the butcher, find the 
 #
 #
 Stairwell
-Creaking Stairwell: Strange unsettling noises are heard as you use the stairs to go from one level to another. There are pictures on the wall and the combination to open the safe. Go down the stairs to return to the living room or continue north to enter the nursey. There is a cipher somewhere in the stairwell that holds a secret to the game.
+Creaking Stairwell: Strange unsettling noises are heard as you use the stairs to go from one level to another. There are pictures on the wall. Go down the stairs to return to the living room or continue north to enter the nursey. There is a cipher somewhere in the stairwell that holds a secret to the game.
 #
 #
 Study
@@ -19,6 +19,8 @@ Doll Playhouse Nursery: A music box with a twirling ballerina fills the quiet ro
 #
 #
 Basement
-Forgotten Screams Basement: The basement is dark, you can hear faded scream and cries. You can exit by going up to the kitchen. You will need to complete the ritual here to escape the haunted house.
+Forgotten Screams Basement: The basement is dark, you can hear faded scream and cries. You can exit by going up to the kitchen. There is a newspaper that holds the secret to escaping. You will need to complete the ritual here to escape the haunted house.
 #
 #
+Freedom
+Congratulations! You have found freedom! You won the game! You can now exit the game with x.

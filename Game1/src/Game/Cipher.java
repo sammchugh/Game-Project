@@ -14,7 +14,7 @@ public class Cipher extends Item {
 
 	    else{
 	        Game.print("You have successfully cracked the cipher!");
-	        Game.print("The cipher says: The newspaper holds the answers you're looking for");
+	        Game.print("The cipher says: The newspaper in the basement holds the answers you're looking for.");
 	     }
 
 	}
